@@ -15,6 +15,10 @@ body{
     font-weight: 300;
     color: $grayishBlue;
     line-height: 1.3;
+
+    &.locked-scroll{
+        overflow: hidden;
+    }
 }
 
 a, a:visited, a:hover {
@@ -45,6 +49,12 @@ button, .button{
     color: white;
     font-weight: 400;
     cursor: pointer;
+}
+
+//Spacing
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 //Visibility
