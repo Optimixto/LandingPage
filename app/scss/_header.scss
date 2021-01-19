@@ -1,5 +1,26 @@
 .header{
 
+    // Menu animations
+    &.open{
+        .header__toggle{
+            > span:first-child{
+                transform: rotate(45deg);
+            }
+    
+            > span:nth-child(2){
+                opacity: 0;
+            }
+    
+            > span:last-child{
+                transform: rotate(-45deg);
+            }
+        }
+        
+        .overlay{
+            animation: fade-in 0.3s ease-in-out forwards;
+        }
+    }
+
     nav{
         padding: 1.0625rem 1.5rem;
     }
@@ -12,17 +33,19 @@
         }
     }
 
-    &__menu{
+    &__toggle{
 
         >span{
             display:block;
             width: 26px;
             height: 2px;
             background-color: $darkBlue;
+            transition: transform 300ms ease-in-out, opacity 0.2s ease-in-out;
+            transform-origin: 3px 1px;
 
             &:not(:last-child)
             {
-                margin-bottom: 3px;
+                margin-bottom: 5px;
             }
         }
     }
@@ -71,4 +94,16 @@
             opacity: 0.75;
         }
     }
+}
+
+.overlay{
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    top: 3.75rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    background: linear-gradient($darkBlue, transparent);
 }
