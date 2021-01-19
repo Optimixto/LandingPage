@@ -97,6 +97,10 @@ body.locked-scroll {
   overflow: hidden;
 }
 
+h1, h2, h3 {
+  margin-top: 0px;
+}
+
 a, a:visited, a:hover {
   text-decoration: none;
 }
@@ -126,19 +130,29 @@ a, a:visited, a:hover {
 }
 
 button, .button {
+  display: inline-block;
+  cursor: pointer;
   padding: 0.875rem 2.1875rem;
   background: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
   background: linear-gradient(to right, #31d35c, #2bb7da);
   border-radius: 50px;
   border: 0;
   color: white;
+  font-size: 0.0875;
   font-weight: 400;
-  cursor: pointer;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+button:hover, .button:hover {
+  opacity: 0.75;
 }
 
 .container {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 @media (max-width: 63.9375em) {
@@ -255,17 +269,6 @@ button, .button {
   opacity: 1;
 }
 
-.header__cta {
-  font-size: 0.0875;
-  color: white;
-  -webkit-transition: opacity 300ms ease-in-out;
-  transition: opacity 300ms ease-in-out;
-}
-
-.header__cta:hover {
-  opacity: 0.75;
-}
-
 .overlay {
   visibility: hidden;
   position: fixed;
@@ -277,5 +280,42 @@ button, .button {
   height: 100vh;
   background: -webkit-gradient(linear, left top, left bottom, from(#2d314d), to(transparent));
   background: linear-gradient(#2d314d, transparent);
+}
+
+.hero__image {
+  position: relative;
+  background-image: url("/images/bg-intro-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 17.5rem;
+}
+
+.hero__image::before {
+  content: "";
+  position: absolute;
+  height: 96%;
+  width: 100%;
+  background-image: url("/images/image-mockups.png");
+  background-size: 92%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.hero__text {
+  text-align: center;
+}
+
+.hero__text h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  font-weight: 300;
+  line-height: 1.15;
+  color: #2d314d;
+}
+
+.hero__text p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
 }
 /*# sourceMappingURL=style.css.map */
